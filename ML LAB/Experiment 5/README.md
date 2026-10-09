@@ -22,6 +22,8 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
+
+
 Theory
 What is Bayesian Learning?
 Bayesian Learning is a probabilistic machine learning approach based on Bayes' Theorem. It uses prior knowledge and observed evidence to calculate the probability of an event.
@@ -41,6 +43,8 @@ Naive Bayes is a supervised classification algorithm based on Bayes' Theorem.
 It is called "Naive" because it assumes that all features are independent of each other.
 
 Despite this assumption, it performs remarkably well on many real-world classification problems.
+
+
 
 Objectives
 Load and explore the Diabetes Dataset.
@@ -64,6 +68,8 @@ BMI	Body Mass Index
 DiabetesPedigreeFunction	Diabetes inheritance score
 Age	Age of patient
 Outcome	0 = Non-Diabetic, 1 = Diabetic
+
+
 Methodology
 Step 1: Load Dataset
 Read the dataset from the local system.
@@ -85,8 +91,11 @@ Display dataset information.
 print(df.info())
 Observation
 Dataset contains medical records.
+
 Outcome is the target variable.
+
 Most attributes are numerical.
+
 Step 3: Data Visualization
 Glucose Distribution
 sns.histplot(
@@ -94,6 +103,7 @@ sns.histplot(
     bins=30,
     kde=True
 )
+
 Observation
 Shows the distribution of blood glucose levels among patients.
 
@@ -103,6 +113,7 @@ sns.histplot(
     bins=30,
     kde=True
 )
+
 Observation
 Displays body mass index distribution.
 
@@ -112,6 +123,8 @@ sns.histplot(
     bins=30,
     kde=True
 )
+
+
 Observation
 Shows age variation within the dataset.
 
@@ -119,6 +132,8 @@ Outcome Distribution
 sns.countplot(
     x=df['Outcome']
 )
+
+
 Observation
 Displays the number of diabetic and non-diabetic patients.
 
@@ -128,6 +143,7 @@ sns.heatmap(
     annot=True,
     cmap='coolwarm'
 )
+
 Observation
 Helps identify relationships among medical features.
 
@@ -145,10 +161,14 @@ X_train, X_test, y_train, y_test = train_test_split(
     test_size=0.2,
     random_state=42
 )
+
 Parameter Description
 Parameter	Meaning
+
 test_size=0.2	20% testing data
+
 random_state=42	Reproducible results
+
 Step 6: Create Bayesian Model
 Algorithm Used
 Gaussian Naive Bayes
@@ -160,6 +180,7 @@ Because:
 Dataset contains continuous numerical features.
 Assumes Gaussian (normal) distribution.
 Suitable for medical datasets.
+
 Step 7: Train Model
 model.fit(X_train, y_train)
 The classifier learns probability distributions from the training data.
